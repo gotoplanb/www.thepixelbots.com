@@ -1,0 +1,91 @@
+/* Backgrounds */
+.wufoo {
+	background: transparent;
+	width: 83%;
+}
+.wufoo input.text, .wufoo textarea.textarea{
+	background: rgba(255,255,255, .3);
+	padding: 5px;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0, .1);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0, .1);
+	-ms-box-shadow: 0 0 8px rgba(0,0,0, .1);
+	-o-box-shadow: 0 0 8px rgba(0,0,0, .1);
+	box-shadow: 0 0 8px rgba(0,0,0, .1); 
+}
+.wufoo input.text:focus, .wufoo textarea.textarea:focus{
+	background: rgba(255,255,255, 1);
+	outline: none;
+	border: 1px solid #aaa;
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0, .4);
+	-moz-box-shadow: 0 0 6px rgba(0,0,0, .4);
+	-ms-box-shadow: 0 0 6px rgba(0,0,0, .4);
+	-o-box-shadow: 0 0 6px rgba(0,0,0, .4);
+	box-shadow: 0 0 6px rgba(0,0,0, .4);
+}
+.wufoo .email-input {
+	width: 200px;
+}
+.wufoo .focused{
+	background: transparent;
+}
+.wufoo .instruct{
+	background-color: #F5F5F5;
+}
+
+/* Borders */
+#container{ 
+	border: 0 solid #cccccc;
+	width: auto;
+}
+.wufoo .info{
+	border-bottom: 1px dotted #CCCCCC;
+}
+.wufoo .instruct{
+	border:1px solid #e6e6e6;
+}
+
+/* Typography */
+.wufoo .info h2{
+	font-size:160%;
+	font-family:inherit;
+	color:#000000;
+}
+.wufoo .info div{
+	font-size:95%;
+	font-family:inherit;
+	color:#444444;
+}
+.wufoo .section h3{
+	font-size:110%;
+	font-family:inherit;
+	background:#FFFFFF;
+	color:#000000;
+}
+.wufoo .section div{
+	font-size:85%;
+	font-family:inherit;
+	color:#444444;
+}
+.wufoo label.desc, .wufoo legend.desc{
+	font-size:95%;
+	font-family:inherit;
+	color:#444444;
+}
+.wufoo li div, .wufoo li div label, .wufoo li span label{
+	font-family:inherit;
+	color:#444444;
+}
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice{
+	font-size:135%;
+	font-family:inherit;
+	color:#333333;
+}
+.wufoo label.choice{
+	color:#444444;
+}
+.wufoo .instruct{
+	font-size:80%;
+	font-family:inherit;
+	color:#444444;
+}

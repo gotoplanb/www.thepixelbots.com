@@ -1,0 +1,172 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Smart Media Creative</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Kreon:400,700' rel='stylesheet' type='text/css'>
+    <!-- end CSS-->
+    
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+    <script type="text/javascript"> var _ss = _ss || []; _ss.push(['_setAccount', 'KOI-A16JQO']); _ss.push(['_trackPageView']); (function() { var ss = document.createElement('script'); ss.type = 'text/javascript'; ss.async = true; ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-4UXZO.sharpspring.com/client/ss.js?ver=1.1.1'; var scr = document.getElementsByTagName('script')[0]; scr.parentNode.insertBefore(ss, scr); })(); </script>
+  
+</head>
+
+<body>
+
+<div id="home" class="panel">
+
+	<div class="main-container group">
+
+		<header>
+			<h1><a href="http://www.smartmediacreative.com">Smart Media Creative</a></h1>
+			<nav>
+				<ul class="group">
+					<li><a href="index.html#home" class="trigger active">Home</a></li>
+					<li><a href="index.html#create" class="trigger">Create</a></li>
+					<li><a href="index.html#collaborate" class="trigger">Collaborate</a></li>
+					<li><a href="index.html#optimize" class="trigger">Optimize</a></li>
+				</ul>
+				<a class="call-to-action trigger" href="index.html#get-started">Get Started</a>
+			</nav>
+			
+			<h2><span>Thank you</span> We'll be back to you shortly.</h2>
+		</header>
+		
+	</div><!-- end .main-container div -->
+	
+	<footer>
+		<div class="container">
+			<p>-fin-</p>
+		</div>
+	</footer>
+
+</div><!-- end #get-started div -->
+
+<div id="intercom"></div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!--<script src="js/scrolly-magic.js"></script>-->
+  <script>
+			$(document).ready(function() {
+			    
+			    var hash = window.location.hash;	
+			    
+			    if (hash !== '') {
+			        $('div.panel').hide();
+    				$('div' + hash).show();
+			    }
+			    
+			    else {
+			    	location.href = location.href + '#home'
+			        $('div.panel').hide();
+                    $('div#home').show();
+			    }			    
+				
+				function urlStripper(url) {
+					var counter = 0;
+					
+					while (url[counter] !== '#') {
+						if(counter >= 100) { 
+							break; 
+						}
+						counter++;
+					}
+					
+					if(counter === 100) {
+						return url;
+					}
+					
+					else {
+						return url.slice(counter + 1);
+					}
+				}
+				
+				$('a.trigger').click(function() {
+
+					var address = window.location.href;
+					var currentLocation = urlStripper(address);
+					
+					var urlClicked = $(this).attr('href');
+					var activeDiv = urlStripper(urlClicked);
+					
+					if(currentLocation === activeDiv) {
+						return;
+					}					
+					
+					else {
+						$('div.panel').fadeOut(800);
+						$('div#' + activeDiv).delay(600).fadeIn(800);
+        			    $('html, body').animate({ scrollTop: 0 }, 'slow');
+					}
+				});	
+				
+				// adjust height of process aside
+				$(window).load(function() { setProcessHeight(); });
+        		$(window).resize(function() { setProcessHeight(); });
+				
+				function setProcessHeight() {
+					$('.process').each(function() {
+						var descHeight = $(this).find('article').height();
+						
+						$(this).find('aside').css('min-height' , descHeight + 'px');
+					});
+				}
+				
+				// Blog posts at #home
+				$.getJSON('test.json', function(data) {
+          var items = [];
+
+          $.each(data, function(title, excerpt) {
+            
+            items.push('<article><h6><a href="#foo">' + title + '</a></h6><p>' + excerpt + '</p></article');
+            
+          });
+
+          $('<div/>', {
+            html: items.join('')
+          }).appendTo('#education-blog');
+        });
+									
+			});
+		
+	</script>
+
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- <script src="js/checkboxes.js"></script> -->
+  <!-- end scripts-->
+
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','2096984-4'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
